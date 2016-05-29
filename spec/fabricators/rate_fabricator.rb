@@ -1,0 +1,2 @@
+Fabricator :rate do
+end

@@ -1,0 +1,9 @@
+create a new conversion.
+<%= form_for conversion do |f| %>
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+
+  <%= f.label :usd_amount %>
+  <%= f.text_field :usd_amount %>
+  <%= f.submit %>
+<% end %>

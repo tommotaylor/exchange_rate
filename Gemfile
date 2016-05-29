@@ -15,6 +15,10 @@ group :development, :test do
   gem "pry"
 end
 
+group :test do
+  gem "shoulda-matchers", "~> 3.1"
+end
+
 group :development, :test, :staging do
   gem "fabrication"
   gem "faker"

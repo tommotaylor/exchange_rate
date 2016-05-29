@@ -1,0 +1,15 @@
+Your conversion was successful.
+
+<p>Historical Date: <%= conversion.date %></p>
+<p>Historical Rate (US/Euro): <%= rate.rate.to_s %></p>
+<p>USD Amount: <%= conversion.usd_amount %></p>
+<p>Euro Amount: <%= conversion.euro_amount %></p>
+
+<p>This is the <%= Conversion.count.ordinalize %> currency conversion on this site.</p>
+
+<div class="hire-me">
+  <%= image_tag "hire_me.jpg", height: "50", width: "50" %>
+  <p>Hire me!</p>
+</div>
+
+<%= link_to "Convert Again", new_conversion_path %>
