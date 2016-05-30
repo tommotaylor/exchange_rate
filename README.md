@@ -1,24 +1,16 @@
-# README
+# Exchange Rate
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple exchange rate application for exchanging USD to Euro for any date back to year 2000.
+Exchange rate date is sourced from http://sdw.ecb.europa.eu/
 
-Things you may want to cover:
+Production app can be viewed at https://exchange-rate.herokuapp.com
 
-* Ruby version
+## Testing
 
-* System dependencies
+Tested using [RSpec](http://rspec.info/). In every application directory 
+run `bundle exec rspec` to test that single application.
 
-* Configuration
+## Setup
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run `rake db:create`, `rake db:migrate`, `rake db:seed` to create and seed the database.
+To launch locally on port:3000: `rails s`
