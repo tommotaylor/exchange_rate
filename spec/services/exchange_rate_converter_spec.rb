@@ -8,8 +8,7 @@ describe ExchangeRateConverter do
     it "creates a conversion with the correct euro amount" do
       expect do
         result = converter.convert(usd_amount: 10, date: 2.days.ago.to_date)
-        expect(result).to be_success
-        expect(result.conversion.euro_amount).to eq(20)
+        expect(result.euro_amount).to eq(20)
       end.to change { Conversion.count }.by(1)
     end
   end

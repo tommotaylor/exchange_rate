@@ -7,10 +7,10 @@ class RatesController < ApplicationController
 
     c = CSV.read(open(uri))
     c.drop(5).each do |row|
-      rate_hash = {}
-      rate_hash[:date] = row[0].to_date
-      rate_hash[:rate] = row[1]
-      Rate.create(rate_hash)
+      rate = {}
+      rate[:date] = row[0].to_date
+      rate[:rate] = BigDecimal.new(row[1])
+      Rate.create(rate)
     end
   end
 end

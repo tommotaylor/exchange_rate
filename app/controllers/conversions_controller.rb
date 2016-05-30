@@ -6,8 +6,8 @@ class ConversionsController < ApplicationController
 
   def create
     result = converter.convert(usd_amount: usd_amount, date: date)
-    if result.success?
-      redirect_to conversion_path(result.conversion)
+    if result
+      redirect_to conversion_path(result)
     else
       render :new
     end
@@ -24,15 +24,15 @@ class ConversionsController < ApplicationController
   end
 
   def conversion
-    @conversion || Conversion.find(params[:id])
+    @conversion ||= Conversion.find(params[:id])
   end
 
   def date
-    @date || conversion_params[:date].to_date
+    @date ||= conversion_params[:date].to_date
   end
 
   def usd_amount
-    @amount || conversion_params[:usd_amount].to_i
+    @amount ||= conversion_params[:usd_amount].to_i
   end
 
   def conversion_params
